@@ -8,6 +8,7 @@ type FeatureSectionProps = {
   image?: string;
   imageAlt?: string;
   preview?: ReactNode;
+  previewClassName?: string;
   reverse?: boolean;
 };
 
@@ -18,6 +19,7 @@ function FeatureSection({
   image,
   imageAlt,
   preview,
+  previewClassName,
   reverse = false,
 }: FeatureSectionProps) {
   return (
@@ -39,7 +41,9 @@ function FeatureSection({
 
         <div className={`min-w-0 ${reverse ? "md:order-1" : ""}`}>
           {preview ? (
-            <div className="relative aspect-[4/3] min-h-0 overflow-hidden">
+            <div
+              className={`relative aspect-[4/3] min-h-0 overflow-hidden ${previewClassName ?? ""}`}
+            >
               {preview}
             </div>
           ) : (

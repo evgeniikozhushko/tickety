@@ -48,6 +48,11 @@ export default async function RootPage() {
             key={feature.title}
             {...feature}
             reverse={index % 2 === 1}
+            previewClassName={
+              index === 0
+                ? "aspect-auto overflow-visible py-1 sm:py-2 xl:flex xl:aspect-[4/3] xl:items-center xl:overflow-hidden xl:py-0"
+                : ""
+            }
             preview={
               index === 0 ? (
                 <RegistrationPreview />
